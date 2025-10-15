@@ -10,7 +10,14 @@
     <div class="container">
         <h1>Hello World</h1>
         <img src="me.jpg" alt="Photo of Me" class="profile-pic">
-        <button class="contact-btn">Contact Me</button>
+        <button class="contact-btn" id="contactBtn">Contact Me</button>
+        <script>
+        document.getElementById('contactBtn').onclick = function() {
+            navigator.clipboard.writeText('megan.carson@slalom.com');
+            this.textContent = 'Email Copied!';
+            setTimeout(() => { this.textContent = 'Contact Me'; }, 1500);
+        };
+        </script>
     </div>
 </body>
 </html>
