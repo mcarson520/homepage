@@ -8,21 +8,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Hello World</h1>
-        <img src="me.jpg" alt="Photo of Me" class="profile-pic">
-        <button class="contact-btn" id="contactBtn">
-            <span>Contact Me</span>
-            <svg class="email-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
-        </button>
+        <div class="flip-card">
+            <div class="flip-card-inner" id="flipCardInner">
+                <div class="flip-card-front container">
+                    <h1>Hello World</h1>
+                    <img src="me.jpg" alt="Photo of Me" class="profile-pic">
+                    <button class="contact-btn" id="contactBtn">
+                            <span>Contact Me</span>
+                            <svg class="email-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </button>
+                    <button class="flip-btn" id="flipToBack">About Me</button>
+                </div>
+                <div class="flip-card-back container">
+                    <h2>About Me</h2>
+                    <p class="bio-text">I've always seen myself as equally left- and right-brained, but it wasn’t until after college that I discovered the perfect way for me to use both — user experience design.<br><br>I graduated from Oakland University in 2018 with a bachelor’s in graphic design. My favorite thing about graphic design was figuring out the best way to bring text, imagery, and graphics together on a page. Now I enjoy doing the same thing for digital products! I also enjoy conducting user research and running usability tests to improve and validate my designs.<br><br>When I’m not designing, I’m either ballroom dancing or traveling and trying new foods. Hit me up if you ever need designer, or a dance teacher!</p>
+                    <button class="flip-btn" id="flipToFront">Back</button>
+                </div>
+            </div>
+        </div>
         <script>
-        const btn = document.getElementById('contactBtn');
-        const btnText = btn.querySelector('span');
-        btn.onclick = function() {
-            navigator.clipboard.writeText('megan.carson@slalom.com');
-            btnText.textContent = 'Email Copied!';
-            setTimeout(() => { btnText.textContent = 'Contact Me'; }, 1500);
-        };
+            // Contact button logic
+            const btn = document.getElementById('contactBtn');
+            const btnText = btn.querySelector('span');
+            btn.onclick = function() {
+                navigator.clipboard.writeText('megan.carson@slalom.com');
+                btnText.textContent = 'Email Copied!';
+                setTimeout(() => { btnText.textContent = 'Contact Me'; }, 1500);
+            };
+            // Flip logic
+            const flipCardInner = document.getElementById('flipCardInner');
+            document.getElementById('flipToBack').onclick = function() {
+                flipCardInner.classList.add('flipped');
+            };
+            document.getElementById('flipToFront').onclick = function() {
+                flipCardInner.classList.remove('flipped');
+            };
+        </script>
         </script>
     </div>
 </body>
