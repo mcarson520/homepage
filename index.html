@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Hello World</h1>
         <img src="me.jpg" alt="Photo of Me" class="profile-pic">
-        <button class="contact-btn" id="contactBtn">Contact Me</button>
+        <button class="contact-btn" id="contactBtn">
+            <span>Contact Me</span>
+            <svg class="email-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+        </button>
         <script>
-        document.getElementById('contactBtn').onclick = function() {
+        const btn = document.getElementById('contactBtn');
+        const btnText = btn.querySelector('span');
+        btn.onclick = function() {
             navigator.clipboard.writeText('megan.carson@slalom.com');
-            this.textContent = 'Email Copied!';
-            setTimeout(() => { this.textContent = 'Contact Me'; }, 1500);
+            btnText.textContent = 'Email Copied!';
+            setTimeout(() => { btnText.textContent = 'Contact Me'; }, 1500);
         };
         </script>
     </div>

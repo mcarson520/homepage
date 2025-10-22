@@ -1,7 +1,7 @@
 body {
     min-height: 100vh;
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Lora', serif;
     background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
     display: flex;
     align-items: center;
@@ -44,8 +44,16 @@ h1 {
     font-size: 1.1rem;
     cursor: pointer;
     transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
 }
 
+.email-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.3em;
+}
 .contact-btn:hover {
     background: #ff69b4;
 }
