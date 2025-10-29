@@ -26,6 +26,30 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Weather Widget -->
+        <div id="weather-widget" class="weather-container">
+            <h3>Current Weather</h3>
+            <div id="weather-loading">Getting your location...</div>
+            <div id="weather-content" style="display: none;">
+                <div class="weather-main">
+                    <div class="weather-icon-container">
+                        <span id="weather-icon"></span>
+                    </div>
+                    <div class="temperature">
+                        <span id="temp"></span>°F
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <p id="location"></p>
+                    <p>Feels like: <span id="feels-like"></span>°F</p>
+                    <p>Wind: <span id="wind"></span> km/h</p>
+                    <p>Humidity: <span id="humidity"></span>%</p>
+                </div>
+            </div>
+            <div id="weather-error" style="display: none;"></div>
+        </div>
+        
         <script>
             // Contact button logic
             const btn = document.getElementById('contactBtn');
@@ -44,7 +68,7 @@
                 flipCardInner.classList.remove('flipped');
             };
         </script>
-        </script>
-    </div>
+        
+        <script src="script.js"></script>
 </body>
 </html>
